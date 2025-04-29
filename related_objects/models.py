@@ -52,7 +52,7 @@ class Learner(User):
 class Course(models.Model):
     name = models.CharField(null=False, max_length=100, default='online course')
     description = models.CharField(max_length=500)
-    # Many-To-Many relationship with Learner
+    # Many-To-Many relationship with Instructor
     instructors = models.ManyToManyField(Instructor)
     # Many-To-Many relationship with Learner
     learners = models.ManyToManyField(Learner, through='Enrollment')
